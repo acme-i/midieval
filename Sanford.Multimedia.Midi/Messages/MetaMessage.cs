@@ -291,44 +291,20 @@ namespace Sanford.Multimedia.Midi
         /// </returns>
         public override bool Equals(object obj)
         {
-            #region Guard
-
-            if(!(obj is MetaMessage))
+            if (obj is MetaMessage message && MetaType == message.MetaType && Length == message.Length)
             {
-                return false;
-            }
-
-            #endregion
-
-            bool equal = true;
-            MetaMessage message = (MetaMessage)obj;
-
-            // If the types do not match.
-            if(MetaType != message.MetaType)
-            {
-                // The messages are not equal
-                equal = false;
-            }
-
-            // If the message lengths are not equal.
-            if(equal && Length != message.Length)
-            {
-                // The message are not equal.
-                equal = false;
-            }
-
-            // Check to see if the data is equal.
-            for(int i = 0; i < Length && equal; i++)
-            {
-                // If a data value does not match.
-                if(this[i] != message[i])
+                for (int i = 0; i < Length; i++)
                 {
-                    // The messages are not equal.
-                    equal = false;
+                    if (this[i] != message[i])
+                    {
+                        return false;
+                    }
                 }
+
+                return true;
             }
 
-            return equal;
+            return false;
         }
 
         // Calculates the hash code.
