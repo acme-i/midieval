@@ -138,6 +138,9 @@
     <Compile Include="ImportExport\UI\frmSelectTrack.Designer.cs">
       <DependentUpon>frmSelectTrack.cs</DependentUpon>
     </Compile>
+    <Compile Include="Messages\ChannelCommand.cs" />
+    <Compile Include="Messages\ControllerType.cs" />
+    <Compile Include="Messages\EventArgs\MidiEventArgsBase.cs" />
     <Compile Include="Messages\Message Builders\KeySignatureBuilder.cs" />
     <Compile Include="GeneralMidi.cs">
       <SubType>Code</SubType>
@@ -171,25 +174,31 @@
     <Compile Include="Messages\Message Builders\TimeSignatureBuilder.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Messages\MessageType.cs" />
     <Compile Include="Messages\MetaMessage.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Messages\MetaType.cs" />
     <Compile Include="Messages\MidiEvents\InputDeviceMidiEvents.cs" />
     <Compile Include="Messages\MidiEvents\MergeMidiEvents.cs" />
     <Compile Include="Messages\MidiEvents\MidiEvents.cs" />
     <Compile Include="Messages\MidiEvents\OutputDeviceEventSink.cs" />
+    <Compile Include="Messages\MidiMessageBase.cs" />
     <Compile Include="Messages\ShortMessage.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Messages\SysCommonMessage.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Messages\SysCommonType.cs" />
     <Compile Include="Messages\SysExMessage.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Messages\SysExType.cs" />
     <Compile Include="Messages\SysRealtimeMessage.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Messages\SysRealtimeType.cs" />
     <Compile Include="MidiNoteConverter.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -304,6 +313,7 @@
       <DependentUpon>zoomDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Score\WhiteNote.cs" />
+    <Compile Include="Sequencing\MidiFileException.cs" />
     <Compile Include="Sequencing\MidiFileProperties.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -317,6 +327,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Sequencing\MidiEvent.cs" />
+    <Compile Include="Sequencing\SequenceType.cs" />
+    <Compile Include="Sequencing\SmpteFrameRate.cs" />
     <Compile Include="Sequencing\Track Classes\frmTools.cs">
       <SubType>Form</SubType>
     </Compile>

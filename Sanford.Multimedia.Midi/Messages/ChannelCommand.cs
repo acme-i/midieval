@@ -1,4 +1,4 @@
-#region License
+﻿#region License
 
 /* Copyright (c) 2005 Leslie Sanford
  * 
@@ -32,54 +32,47 @@
 
 #endregion
 
-using System;
-
 namespace Sanford.Multimedia.Midi
 {
     /// <summary>
-    /// Represents the basic functionality for all MIDI messages.
+    /// Defines constants for ChannelMessage types.
     /// </summary>
-    public interface IMidiMessage
+    public enum ChannelCommand 
     {
         /// <summary>
-        /// Gets a byte array representation of the MIDI message.
+        /// Represents the note-off command type.
         /// </summary>
-        /// <returns>
-        /// A byte array representation of the MIDI message.
-        /// </returns>
-        byte[] GetBytes();
+        NoteOff = 0x80,
 
         /// <summary>
-        /// Gets the MIDI message's status value.
+        /// Represents the note-on command type.
         /// </summary>
-        int Status
-        {
-            get;
-        }
+        NoteOn = 0x90,
 
         /// <summary>
-        /// FAB:
-        /// </summary>        
-        int Data1
-        {
-            get;
-        }
-
-        /// <summary>
-        /// FAB:
-        /// </summary>        
-        int Data2
-        {
-            get;
-        }
-
-
-        /// <summary>
-        /// Gets the MIDI event's type.
+        /// Represents the poly pressure (aftertouch) command type.
         /// </summary>
-        MessageType MessageType
-        {
-            get;
-        }
+        PolyPressure = 0xA0,
+
+        /// <summary>
+        /// Represents the controller command type.
+        /// </summary>
+        Controller = 0xB0,  
+  
+        /// <summary>
+        /// Represents the program change command type.
+        /// </summary>
+        ProgramChange = 0xC0,
+
+        /// <summary>
+        /// Represents the channel pressure (aftertouch) command 
+        /// type.
+        /// </summary>
+        ChannelPressure = 0xD0,   
+     
+        /// <summary>
+        /// Represents the pitch wheel command type.
+        /// </summary>
+        PitchWheel = 0xE0
     }
 }

@@ -36,21 +36,6 @@ using System;
 
 namespace Sanford.Multimedia.Midi
 {
-    public abstract class MidiMessageBase
-    {
-        /// <summary>
-        /// Delta samples when the event should be processed in the next audio buffer.
-        /// Leave at 0 for realtime input to play as fast as possible.
-        /// Set to the desired sample in the next buffer if you play a midi sequence synchronized to the audio callback
-        /// </summary>
-        public int DeltaFrames
-        {
-            get;
-            set;
-        }
-
-    }
-
     /// <summary>
     /// Represents the basic class for all MIDI short messages.
     /// </summary>

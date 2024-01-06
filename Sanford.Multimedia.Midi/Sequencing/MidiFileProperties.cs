@@ -35,34 +35,13 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Windows.Forms;
 
 namespace Sanford.Multimedia.Midi
 {
     /// <summary>
-    /// Defintes constants representing SMPTE frame rates.
+    /// Represents MIDI file properties.
     /// </summary>
-    public enum SmpteFrameRate
-    {
-        Smpte24     = 24,
-        Smpte25     = 25,
-        Smpte30Drop = 29,
-        Smpte30     = 30
-    }
-
-    /// <summary>
-    /// The different types of sequences.
-    /// </summary>
-    public enum SequenceType
-    {
-        Ppqn,
-        Smpte
-    }    
-
-	/// <summary>
-	/// Represents MIDI file properties.
-	/// </summary>
-	internal class MidiFileProperties
+    internal class MidiFileProperties
 	{
         private const int PropertyLength = 2;
 
@@ -468,13 +447,5 @@ namespace Sanford.Multimedia.Midi
             
         }
 
-    }
-
-    public class MidiFileException : ApplicationException
-    {
-        public MidiFileException(string message) : base(message)
-        {
-            MessageBox.Show(message, "Karaboss", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-        }
     }
 }

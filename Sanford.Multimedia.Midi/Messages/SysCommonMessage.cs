@@ -38,40 +38,10 @@ using System.Diagnostics;
 
 namespace Sanford.Multimedia.Midi
 {
-    #region System Common Message Types
-
     /// <summary>
-    /// Defines constants representing the various system common message types.
+    /// Represents MIDI system common messages.
     /// </summary>
-    public enum SysCommonType
-    {
-        /// <summary>
-        /// Represents the MTC system common message type.
-        /// </summary>
-        MidiTimeCode = 0xF1,
-
-        /// <summary>
-        /// Represents the song position pointer type.
-        /// </summary>
-        SongPositionPointer,
-
-        /// <summary>
-        /// Represents the song select type.
-        /// </summary>
-        SongSelect,
-
-        /// <summary>
-        /// Represents the tune request type.
-        /// </summary>
-        TuneRequest = 0xF6
-    }
-
-    #endregion
-
-	/// <summary>
-	/// Represents MIDI system common messages.
-	/// </summary>
-	[ImmutableObject(true)]
+    [ImmutableObject(true)]
 	public sealed class SysCommonMessage : ShortMessage
 	{
         #region SysCommonMessage Members

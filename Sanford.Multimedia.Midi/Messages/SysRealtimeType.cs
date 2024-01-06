@@ -1,4 +1,4 @@
-#region License
+﻿#region License
 
 /* Copyright (c) 2005 Leslie Sanford
  * 
@@ -32,54 +32,47 @@
 
 #endregion
 
-using System;
 
 namespace Sanford.Multimedia.Midi
 {
     /// <summary>
-    /// Represents the basic functionality for all MIDI messages.
+    /// Defines constants representing the various system realtime message types.
     /// </summary>
-    public interface IMidiMessage
+    public enum SysRealtimeType
     {
         /// <summary>
-        /// Gets a byte array representation of the MIDI message.
+        /// Represents the clock system realtime type.
         /// </summary>
-        /// <returns>
-        /// A byte array representation of the MIDI message.
-        /// </returns>
-        byte[] GetBytes();
+        Clock = 0xF8,
 
         /// <summary>
-        /// Gets the MIDI message's status value.
+        /// Represents the tick system realtime type.
         /// </summary>
-        int Status
-        {
-            get;
-        }
+        Tick,
 
         /// <summary>
-        /// FAB:
-        /// </summary>        
-        int Data1
-        {
-            get;
-        }
-
-        /// <summary>
-        /// FAB:
-        /// </summary>        
-        int Data2
-        {
-            get;
-        }
-
-
-        /// <summary>
-        /// Gets the MIDI event's type.
+        /// Represents the start system realtime type.
         /// </summary>
-        MessageType MessageType
-        {
-            get;
-        }
+        Start,
+
+        /// <summary>
+        /// Represents the continue system realtime type.
+        /// </summary>
+        Continue,
+
+        /// <summary>
+        /// Represents the stop system realtime type.
+        /// </summary>
+        Stop,    
+    
+        /// <summary>
+        /// Represents the active sense system realtime type.
+        /// </summary>
+        ActiveSense = 0xFE,
+
+        /// <summary>
+        /// Represents the reset system realtime type.
+        /// </summary>
+        Reset
     }
 }

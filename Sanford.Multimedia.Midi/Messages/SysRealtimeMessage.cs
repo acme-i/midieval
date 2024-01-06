@@ -38,59 +38,14 @@ using System.Diagnostics;
 
 namespace Sanford.Multimedia.Midi
 {
-    #region System Realtime Message Types
-    
     /// <summary>
-    /// Defines constants representing the various system realtime message types.
+    /// Represents MIDI system realtime messages.
     /// </summary>
-    public enum SysRealtimeType
-    {
-        /// <summary>
-        /// Represents the clock system realtime type.
-        /// </summary>
-        Clock = 0xF8,
-
-        /// <summary>
-        /// Represents the tick system realtime type.
-        /// </summary>
-        Tick,
-
-        /// <summary>
-        /// Represents the start system realtime type.
-        /// </summary>
-        Start,
-
-        /// <summary>
-        /// Represents the continue system realtime type.
-        /// </summary>
-        Continue,
-
-        /// <summary>
-        /// Represents the stop system realtime type.
-        /// </summary>
-        Stop,    
-    
-        /// <summary>
-        /// Represents the active sense system realtime type.
-        /// </summary>
-        ActiveSense = 0xFE,
-
-        /// <summary>
-        /// Represents the reset system realtime type.
-        /// </summary>
-        Reset
-    }
-
-    #endregion
-
-	/// <summary>
-	/// Represents MIDI system realtime messages.
-	/// </summary>
-	/// <remarks>
-	/// System realtime messages are MIDI messages that are primarily concerned 
-	/// with controlling and synchronizing MIDI devices. 
-	/// </remarks>
-	[ImmutableObject(true)]
+    /// <remarks>
+    /// System realtime messages are MIDI messages that are primarily concerned 
+    /// with controlling and synchronizing MIDI devices. 
+    /// </remarks>
+    [ImmutableObject(true)]
 	public sealed class SysRealtimeMessage : ShortMessage
 	{
         #region SysRealtimeMessage Members

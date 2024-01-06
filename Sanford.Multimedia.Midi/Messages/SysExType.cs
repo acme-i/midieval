@@ -1,4 +1,4 @@
-#region License
+﻿#region License
 
 /* Copyright (c) 2005 Leslie Sanford
  * 
@@ -32,54 +32,22 @@
 
 #endregion
 
-using System;
 
 namespace Sanford.Multimedia.Midi
 {
     /// <summary>
-    /// Represents the basic functionality for all MIDI messages.
+    /// Defines constants representing various system exclusive message types.
     /// </summary>
-    public interface IMidiMessage
+    public enum SysExType
     {
         /// <summary>
-        /// Gets a byte array representation of the MIDI message.
+        /// Represents the start of system exclusive message type.
         /// </summary>
-        /// <returns>
-        /// A byte array representation of the MIDI message.
-        /// </returns>
-        byte[] GetBytes();
+        Start = 0xF0,
 
         /// <summary>
-        /// Gets the MIDI message's status value.
+        /// Represents the continuation of a system exclusive message.
         /// </summary>
-        int Status
-        {
-            get;
-        }
-
-        /// <summary>
-        /// FAB:
-        /// </summary>        
-        int Data1
-        {
-            get;
-        }
-
-        /// <summary>
-        /// FAB:
-        /// </summary>        
-        int Data2
-        {
-            get;
-        }
-
-
-        /// <summary>
-        /// Gets the MIDI event's type.
-        /// </summary>
-        MessageType MessageType
-        {
-            get;
-        }
+        Continuation = 0xF7
     }
 }

@@ -1,6 +1,6 @@
-#region License
+﻿#region License
 
-/* Copyright (c) 2005 Leslie Sanford
+/* Copyright (c) 2006 Leslie Sanford
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a copy 
  * of this software and associated documentation files (the "Software"), to 
@@ -32,54 +32,15 @@
 
 #endregion
 
-using System;
 
 namespace Sanford.Multimedia.Midi
 {
     /// <summary>
-    /// Represents the basic functionality for all MIDI messages.
+    /// The different types of sequences.
     /// </summary>
-    public interface IMidiMessage
+    public enum SequenceType
     {
-        /// <summary>
-        /// Gets a byte array representation of the MIDI message.
-        /// </summary>
-        /// <returns>
-        /// A byte array representation of the MIDI message.
-        /// </returns>
-        byte[] GetBytes();
-
-        /// <summary>
-        /// Gets the MIDI message's status value.
-        /// </summary>
-        int Status
-        {
-            get;
-        }
-
-        /// <summary>
-        /// FAB:
-        /// </summary>        
-        int Data1
-        {
-            get;
-        }
-
-        /// <summary>
-        /// FAB:
-        /// </summary>        
-        int Data2
-        {
-            get;
-        }
-
-
-        /// <summary>
-        /// Gets the MIDI event's type.
-        /// </summary>
-        MessageType MessageType
-        {
-            get;
-        }
-    }
+        Ppqn,
+        Smpte
+    }    
 }

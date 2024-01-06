@@ -1,4 +1,4 @@
-#region License
+﻿#region License
 
 /* Copyright (c) 2005 Leslie Sanford
  * 
@@ -32,54 +32,32 @@
 
 #endregion
 
-using System;
 
 namespace Sanford.Multimedia.Midi
 {
     /// <summary>
-    /// Represents the basic functionality for all MIDI messages.
+    /// Defines constants representing the various system common message types.
     /// </summary>
-    public interface IMidiMessage
+    public enum SysCommonType
     {
         /// <summary>
-        /// Gets a byte array representation of the MIDI message.
+        /// Represents the MTC system common message type.
         /// </summary>
-        /// <returns>
-        /// A byte array representation of the MIDI message.
-        /// </returns>
-        byte[] GetBytes();
+        MidiTimeCode = 0xF1,
 
         /// <summary>
-        /// Gets the MIDI message's status value.
+        /// Represents the song position pointer type.
         /// </summary>
-        int Status
-        {
-            get;
-        }
+        SongPositionPointer,
 
         /// <summary>
-        /// FAB:
-        /// </summary>        
-        int Data1
-        {
-            get;
-        }
-
-        /// <summary>
-        /// FAB:
-        /// </summary>        
-        int Data2
-        {
-            get;
-        }
-
-
-        /// <summary>
-        /// Gets the MIDI event's type.
+        /// Represents the song select type.
         /// </summary>
-        MessageType MessageType
-        {
-            get;
-        }
+        SongSelect,
+
+        /// <summary>
+        /// Represents the tune request type.
+        /// </summary>
+        TuneRequest = 0xF6
     }
 }
