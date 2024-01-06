@@ -4,21 +4,19 @@ using System.Windows.Forms;
 
 namespace Sanford.Multimedia.Midi
 {
-    
     public class MidiTrackImporter
     {
         public delegate void TrackSelectedEventHandler(object sender, Track track);
         public event TrackSelectedEventHandler TrackSelected;
-        private Sequence sequence;       
+        private Sequence sequence;
 
         // constructor
         public MidiTrackImporter()
         {
-
         }
-        
+
         public void Read(string fileName)
-        {            
+        {
             sequence = new Sequence();
             sequence.LoadCompleted += HandleLoadCompleted;
             LoadAsyncMidiFile(fileName);
@@ -28,10 +26,8 @@ namespace Sanford.Multimedia.Midi
         {
             sequence.Clean();
             // Propose to select tracks
-            DialogResult dr = new DialogResult();
             frmSelectTrack frmSelect = new frmSelectTrack(sequence);
-            dr = frmSelect.ShowDialog();
-            if (dr == DialogResult.Cancel)            
+            if (frmSelect.ShowDialog() == DialogResult.Cancel)
                 return;
 
             // Raise event track selected
@@ -56,7 +52,5 @@ namespace Sanford.Multimedia.Midi
                 throw new Exception("Load Midi File");
             }
         }
-        
-    }        
-
+    }
 }
